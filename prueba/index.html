@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+
+    .form-inner-cont {
+      border: 1px solid #000000;
+      -moz-border-radius: 7px;
+      -webkit-border-radius: 7px;
+      -webkit-box-shadow: 20px 0px 20px 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: 20px 0px 20px 0px rgba(0,0,0,0.75);
+      box-shadow: 20px 0px 20px 0px rgba(0,0,0,0.75);
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+    <div class="col-lg-8 form-inner-cont">
+        <form name="form" action="https://sendmail.layouts.com/submitForm" method="post" class="signin-form" onsubmit="return ValidateForm()">
+            <div class="form-grids">
+                <div class="form-input">
+                    <input type="text" name="lName" id="lName" placeholder="Enter your name *"
+                        />
+                </div>
+                <div class="form-input">
+                    <input type="text" name="lSubject" id="lSubject" placeholder="Enter subject "
+                        />
+                </div>
+                <div class="form-input">
+                    <input type="email" name="lSender" id="lSender" placeholder="Enter your email *"
+                         />
+                </div>
+                <div class="form-input">
+                    <input type="text" name="lPhone" id="lPhone" placeholder="Enter your Phone Number *"
+                         />
+                </div>
+            </div>
+            <div class="form-input">
+                <textarea name="lMessage" id="lMessage" placeholder="Type your query here"
+                    ></textarea>
+            </div>
+            <div class="text-right">
+                <button class="btn btn-style btn-primary">Submit Now</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+function ValidateForm (){
+const form = document.getElementById('form');
+const lName = document.getElementById('lName');
+const lSubject = document.getElementById('lSubject');
+const lSender = document.getElementById('lSender');
+const lPhone = document.getElementById('lPhone');
+const lMessage = document.getElementById('lMessage');
+
+    const lNameValue = lName.value.trim();
+    const lSubjectValue = lSubject.value.trim();
+    const lSenderValue = lSender.value.trim();
+    const lPhoneValue = lPhone.value.trim();
+    const lMessageValue = lMessage.value.trim();
+console.log(lNameValue);
+console.log(lSubjectValue);
+console.log(lPhoneValue);
+console.log(lMessageValue);
+
+if(lNameValue && lSubjectValue && lPhoneValue && lMessageValue && lSender){
+    return true;
+}else{
+     !lNameValue ? alert('Please confirm your lNameValue') : '';
+    !lSubjectValue ? alert('Please confirm your lSubjectValue') : '';
+    !lPhoneValue ? alert('Please confirm your lPhoneValue') : '';
+    !lMessageValue ? alert('Please confirm your lMessageValue') : '';
+    !lSender ? alert('Please confirm your lSender') : '';
+    return false
+}
+
+}
+
+</script>
+</html>
